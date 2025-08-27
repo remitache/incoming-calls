@@ -15,8 +15,7 @@
     <!-- Call Screen -->
     <div v-else class="call-screen">
       <div class="character-bg" :style="{ 
-        backgroundImage: `url(${characters[selectedCharacter].image})`,
-        background: characters[selectedCharacter].fallbackColor
+        backgroundImage: `url(${characters[selectedCharacter].image}), ${characters[selectedCharacter].fallbackColor}`
       }">
         <div class="call-overlay">
           <div class="character-info">
@@ -62,12 +61,12 @@ const callAnswered = ref(false)
 const characters = {
   mcqueen: {
     name: 'Lightning McQueen',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=1200&fit=crop&crop=center',
+    image: '/mcqueen.jpg',
     fallbackColor: 'linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%)'
   },
   gabby: {
     name: 'Gabby',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=1200&fit=crop&crop=center',
+    image: '/gabby.jpg',
     fallbackColor: 'linear-gradient(135deg, #ff9ff3 0%, #f368e0 100%)'
   },
   minion: {
@@ -108,6 +107,13 @@ const endCall = () => {
   callAnswered.value = false
   selectedCharacter.value = ''
 }
+
+watch(selectedCharacter, (newValue) => {
+  if (!newValue && ringTone.value) {
+    ringTone.value.pause()
+    ringTone.value.currentTime = 0
+  }
+})
 </script>
 
 <style scoped>
