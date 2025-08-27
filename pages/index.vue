@@ -7,6 +7,8 @@
         <option value="">Select a character...</option>
         <option value="mcqueen">Lightning McQueen</option>
         <option value="gabby">Gabby (Gabby's Dollhouse)</option>
+        <option value="minion">Minion</option>
+        <option value="spiderman">Spiderman</option>
       </select>
     </div>
 
@@ -67,6 +69,16 @@ const characters = {
     name: 'Gabby',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=1200&fit=crop&crop=center',
     fallbackColor: 'linear-gradient(135deg, #ff9ff3 0%, #f368e0 100%)'
+  },
+  minion: {
+    name: 'Minion',
+    image: '/minion.jpg',
+    fallbackColor: 'linear-gradient(135deg, #ffd32a 0%, #ff9500 100%)'
+  },
+  spiderman: {
+    name: 'Spiderman',
+    image: '/spiderman.jpg',
+    fallbackColor: 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)'
   }
 }
 
