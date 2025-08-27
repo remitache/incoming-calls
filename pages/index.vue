@@ -37,9 +37,9 @@
     <!-- Video Call Screen -->
     <div v-else-if="showVideo" class="video-screen">
       <iframe 
-        :src="`https://www.youtube.com/embed/${currentVideoId}?autoplay=1&loop=1&playlist=${currentVideoId}&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&cc_load_policy=0&iv_load_policy=3&autohide=1`"
+        :src="`https://www.youtube.com/embed/${currentVideoId}?autoplay=1&mute=1&loop=1&playlist=${currentVideoId}&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&cc_load_policy=0&iv_load_policy=3&autohide=1&playsinline=1`"
         frameborder="0"
-        allow="autoplay; encrypted-media"
+        allow="autoplay; encrypted-media; fullscreen"
         class="video-iframe">
       </iframe>
       <div class="video-overlay"></div>
