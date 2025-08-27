@@ -11,6 +11,9 @@
         <option value="spiderman">Spiderman</option>
         <option value="pawpatrol">Paw Patrol</option>
       </select>
+      <button @click="toggleFullscreen" class="fullscreen-btn">
+        {{ isFullscreen ? 'Exit Fullscreen' : 'Fullscreen' }}
+      </button>
       <div class="credits">
         Made by Remi Tache
       </div>
@@ -47,6 +50,10 @@
               </svg>
             </button>
           </div>
+          
+          <button @click="toggleFullscreen" class="fullscreen-toggle">
+            {{ isFullscreen ? 'Exit Fullscreen' : 'Fullscreen' }}
+          </button>
         </div>
       </div>
       
@@ -61,6 +68,7 @@
 const selectedCharacter = ref('')
 const ringTone = ref(null)
 const callAnswered = ref(false)
+const isFullscreen = ref(false)
 
 const characters = {
   mcqueen: {
@@ -105,6 +113,16 @@ const answerCall = () => {
   if (ringTone.value) {
     ringTone.value.pause()
     ringTone.value.currentTime = 0
+  }
+}
+
+const toggleFullscreen = () => {
+  if (!isFullscreen.value) {
+    document.documentElement.requestFullscreen()
+    isFullscreen.value = true
+  } else {
+    document.exitFullscreen()
+    isFullscreen.value = false
   }
 }
 
@@ -204,10 +222,13 @@ watch(selectedCharacter, (newValue) => {
 }
 
 .call-controls {
+  position: absolute;
+  bottom: 8rem;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin-bottom: 2rem;
 }
 
 .call-controls button {
@@ -252,6 +273,34 @@ watch(selectedCharacter, (newValue) => {
   backdrop-filter: blur(10px);
 }
 
+.fullscreen-btn {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+.fullscreen-toggle {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
 .credits {
   position: absolute;
   bottom: 1rem;
@@ -274,6 +323,11 @@ watch(selectedCharacter, (newValue) => {
   .call-controls button {
     width: 50px;
     height: 50px;
+  }
+  
+  .call-controls {
+    bottom: 9rem;
+    gap: 1.5rem;
   }
   
   .credits {
