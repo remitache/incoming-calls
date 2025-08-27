@@ -28,5 +28,11 @@ export const characters = {
     image: '/incoming-calls/pawpatrol.jpg',
     fallbackColor: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)',
     videoIds: ['ThFoPC9wXt0']
+  },
+  lulypampin: {
+    name: 'Luly Pampin',
+    image: '/incoming-calls/lulypampin.jpg',
+    fallbackColor: 'linear-gradient(135deg, #ff69b4 0%, #ff1493 100%)',
+    videoIds: ['BzC6bZ2tUHQ']
   }
 }
