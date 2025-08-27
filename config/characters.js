@@ -21,12 +21,12 @@ export const characters = {
     name: 'Spiderman',
     image: '/incoming-calls/spiderman.jpg',
     fallbackColor: 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)',
-    videoId: 'IzKhlpTf5Oc'
+    videoId: 'MVaNylFPHKQ'
   },
   pawpatrol: {
     name: 'Paw Patrol',
     image: '/incoming-calls/pawpatrol.jpg',
     fallbackColor: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)',
-    videoId: 'dQw4w9WgXcQ'
+    videoId: 'ThFoPC9wXt0'
   }
 }
