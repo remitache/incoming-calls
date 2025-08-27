@@ -12,7 +12,10 @@
 
     <!-- Call Screen -->
     <div v-else class="call-screen">
-      <div class="character-bg" :style="{ backgroundImage: `url(${characters[selectedCharacter].image})` }">
+      <div class="character-bg" :style="{ 
+        backgroundImage: `url(${characters[selectedCharacter].image})`,
+        background: characters[selectedCharacter].fallbackColor
+      }">
         <div class="call-overlay">
           <div class="character-info">
             <h2>{{ characters[selectedCharacter].name }}</h2>
@@ -57,11 +60,13 @@ const callAnswered = ref(false)
 const characters = {
   mcqueen: {
     name: 'Lightning McQueen',
-    image: '/mcqueen.jpg'
+    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=1200&fit=crop&crop=center',
+    fallbackColor: 'linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%)'
   },
   gabby: {
     name: 'Gabby',
-    image: '/gabby.jpg'
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=1200&fit=crop&crop=center',
+    fallbackColor: 'linear-gradient(135deg, #ff9ff3 0%, #f368e0 100%)'
   }
 }
 
