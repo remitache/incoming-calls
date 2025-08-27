@@ -3,30 +3,30 @@ export const characters = {
     name: 'Lightning McQueen',
     image: '/incoming-calls/mcqueen.jpg',
     fallbackColor: 'linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%)',
-    videoId: 'd-uEQyA-tE0'
+    videoIds: ['d-uEQyA-tE0', '8dHce7p0Ncs']
   },
   gabby: {
     name: 'Gabby (Gabby\'s Dollhouse)',
     image: '/incoming-calls/gabby.jpg',
     fallbackColor: 'linear-gradient(135deg, #ff9ff3 0%, #f368e0 100%)',
-    videoId: 'O1Ctad3t1_4'
+    videoIds: ['d-Y_3cksLJg']
   },
   minion: {
     name: 'Minion',
     image: '/incoming-calls/minion.jpg',
     fallbackColor: 'linear-gradient(135deg, #ffd32a 0%, #ff9500 100%)',
-    videoId: 'O4vEKaV2WQQ'
+    videoIds: ['O4vEKaV2WQQ', '2D_0bhO5PRQ', 'zFcBM-ric0Y', 'RLfomShufbI']
   },
   spiderman: {
     name: 'Spiderman',
     image: '/incoming-calls/spiderman.jpg',
     fallbackColor: 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)',
-    videoId: 'MVaNylFPHKQ'
+    videoIds: ['MVaNylFPHKQ']
   },
   pawpatrol: {
     name: 'Paw Patrol',
     image: '/incoming-calls/pawpatrol.jpg',
     fallbackColor: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)',
-    videoId: 'ThFoPC9wXt0'
+    videoIds: ['ThFoPC9wXt0']
   }
 }

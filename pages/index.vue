@@ -37,7 +37,7 @@
     <!-- Video Call Screen -->
     <div v-else-if="showVideo" class="video-screen">
       <iframe 
-        :src="`https://www.youtube.com/embed/${charactersData[selectedCharacter]?.videoId}?autoplay=1&loop=1&playlist=${charactersData[selectedCharacter]?.videoId}&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&cc_load_policy=0&iv_load_policy=3&autohide=1`"
+        :src="`https://www.youtube.com/embed/${currentVideoId}?autoplay=1&loop=1&playlist=${currentVideoId}&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&cc_load_policy=0&iv_load_policy=3&autohide=1`"
         frameborder="0"
         allow="autoplay; encrypted-media"
         class="video-iframe">
@@ -101,6 +101,7 @@ const ringTone = ref(null)
 const callAnswered = ref(false)
 const isFullscreen = ref(false)
 const showVideo = ref(false)
+const currentVideoId = ref('')
 
 import { characters as charactersConfig } from '~/config/characters.js'
 
@@ -118,10 +119,14 @@ const startCall = () => {
 }
 
 const answerCall = () => {
-  const videoId = charactersData[selectedCharacter.value]?.videoId
-  if (!videoId) {
-    return // Do nothing if no video ID
+  const videoIds = charactersData[selectedCharacter.value]?.videoIds
+  if (!videoIds || videoIds.length === 0) {
+    return // Do nothing if no video IDs
   }
+  
+  // Randomly select a video ID
+  const randomIndex = Math.floor(Math.random() * videoIds.length)
+  currentVideoId.value = videoIds[randomIndex]
   
   callAnswered.value = true
   showVideo.value = true
@@ -284,8 +289,8 @@ watch(selectedCharacter, (newValue) => {
   bottom: 4rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 60px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   border: none;
   background: #ff4757;
@@ -353,8 +358,8 @@ watch(selectedCharacter, (newValue) => {
 }
 
 .call-controls button {
-  width: 60px;
-  height: 60px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -442,8 +447,8 @@ watch(selectedCharacter, (newValue) => {
   }
   
   .call-controls button {
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
   }
   
   .call-controls {
