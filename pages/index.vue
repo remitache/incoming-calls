@@ -9,7 +9,11 @@
         <option value="gabby">Gabby (Gabby's Dollhouse)</option>
         <option value="minion">Minion</option>
         <option value="spiderman">Spiderman</option>
+        <option value="pawpatrol">Paw Patrol</option>
       </select>
+      <div class="credits">
+        Made by Remi Tache
+      </div>
     </div>
 
     <!-- Call Screen -->
@@ -78,6 +82,11 @@ const characters = {
     name: 'Spiderman',
     image: '/spiderman.jpg',
     fallbackColor: 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)'
+  },
+  pawpatrol: {
+    name: 'Paw Patrol',
+    image: '/pawpatrol.jpg',
+    fallbackColor: 'linear-gradient(135deg, #3498db 0%, #2980b9 100%)'
   }
 }
 
@@ -243,6 +252,16 @@ watch(selectedCharacter, (newValue) => {
   backdrop-filter: blur(10px);
 }
 
+.credits {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  opacity: 0.7;
+  color: white;
+}
+
 @media (max-width: 480px) {
   .character-info h2 {
     font-size: 2rem;
@@ -255,6 +274,10 @@ watch(selectedCharacter, (newValue) => {
   .call-controls button {
     width: 50px;
     height: 50px;
+  }
+  
+  .credits {
+    font-size: 0.8rem;
   }
 }
 </style>
