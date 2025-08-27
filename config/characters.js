@@ -3,7 +3,7 @@ export const characters = {
     name: 'Lightning McQueen',
     image: '/incoming-calls/mcqueen.jpg',
     fallbackColor: 'linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%)',
-    videoId: 'O1Ctad3t1_4'
+    videoId: 'd-uEQyA-tE0'
   },
   gabby: {
     name: 'Gabby (Gabby\'s Dollhouse)',
@@ -15,13 +15,13 @@ export const characters = {
     name: 'Minion',
     image: '/incoming-calls/minion.jpg',
     fallbackColor: 'linear-gradient(135deg, #ffd32a 0%, #ff9500 100%)',
-    videoId: 'O1Ctad3t1_4'
+    videoId: 'O4vEKaV2WQQ'
   },
   spiderman: {
     name: 'Spiderman',
     image: '/incoming-calls/spiderman.jpg',
     fallbackColor: 'linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)',
-    videoId: 'O1Ctad3t1_4'
+    videoId: 'IzKhlpTf5Oc'
   },
   pawpatrol: {
     name: 'Paw Patrol',
